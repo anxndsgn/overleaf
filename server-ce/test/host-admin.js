@@ -107,7 +107,7 @@ app.post(
         'sharelatex',
         'bash',
         '-c',
-        `source /etc/container_environment.sh && source /etc/overleaf/env.sh || source /etc/sharelatex/env.sh && cd ${JSON.stringify(cwd)} && node ${JSON.stringify(script)} ${args.map(a => JSON.stringify(a)).join(' ')}`,
+        `source /etc/container_environment.sh && source /etc/overleaf/env.sh || source /etc/overleaf/env.sh && cd ${JSON.stringify(cwd)} && node ${JSON.stringify(script)} ${args.map(a => JSON.stringify(a)).join(' ')}`,
       ],
       (error, stdout, stderr) => {
         res.json({
@@ -187,7 +187,7 @@ function setVarsDockerCompose({ pro, vars, version, withDataDir }) {
   const dataDirInContainer =
     version === 'latest' || version >= '5.0'
       ? '/var/lib/overleaf/data'
-      : '/var/lib/sharelatex/data'
+      : '/var/lib/overleaf/data'
 
   cfg.services.sharelatex.volumes = []
   if (withDataDir) {

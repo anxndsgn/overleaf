@@ -2,8 +2,8 @@ FROM sharelatex/sharelatex:2.0.0
 
 
 # Patch 1: Fixes project deletion (https://github.com/overleaf/overleaf/issues/644)
-ADD disable_project_history.patch /etc/sharelatex/disable_project_history.patch
-RUN cd /etc/sharelatex && \
+ADD disable_project_history.patch /etc/overleaf/disable_project_history.patch
+RUN cd /etc/overleaf && \
     patch < disable_project_history.patch
 
 

@@ -6,9 +6,9 @@ RUN apt-get update \
 &&  rm -rf /var/lib/apt/lists/*
 
 # Patch: force services to use ipv4 in server-ce container
-ADD env.sh /etc/sharelatex/env.sh
-COPY pr_17601-1.patch /etc/sharelatex/
-RUN cd /etc/sharelatex && patch -p0 < pr_17601-1.patch && rm pr_17601-1.patch
+ADD env.sh /etc/overleaf/env.sh
+COPY pr_17601-1.patch /etc/overleaf/
+RUN cd /etc/overleaf && patch -p0 < pr_17601-1.patch && rm pr_17601-1.patch
 COPY pr_17601-2.patch /overleaf/cron/
 RUN cd /overleaf/cron && patch -p0 < pr_17601-2.patch && rm pr_17601-2.patch
 COPY pr_17601-3.patch /etc/service/
