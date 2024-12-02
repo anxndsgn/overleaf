@@ -1,11 +1,13 @@
 #!/bin/bash
 
+# /etc/sharelatex
+# /var/lib/sharelatex
+# /var/log/sharelatex
+
 set -e
 
 POTENTIAL_OLD_PATHS="
-/etc/sharelatex
-/var/lib/sharelatex
-/var/log/sharelatex
+
 "
 
 OLD_ITEMS=""
