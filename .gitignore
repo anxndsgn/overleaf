@@ -4,3 +4,6 @@
 # user defined files
 .env
 docker-compose.override.yml
+
+.Ds_Store
+node_modules
